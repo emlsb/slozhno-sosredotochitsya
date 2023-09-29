@@ -2,4 +2,96 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  background-color: #000028;
+  background-image: url(../images/cover-image-dark.png);
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  background-attachment: fixed;
+}
+
+.header {
+  width: 100%;
+  height: 768px;
+}
+
+.header__theme-menu-list {
+  display: grid;
+  grid-template-columns: repeat(3, 44px);
+  justify-content: center;
+  gap: 15px;
+  list-style: none;
+}
+
+.header__theme-menu-button {
+  height: 23px;
+  color: #FF0070;
+  text-align: center;
+  font-family: IBM Plex Mono;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 100% */
+  background-color: transparent;
+  border: none;
+  text-transform: lowercase;
+}
+
+.title {
+  color: #DB00FF;
+  text-shadow: 4px 4px 0px #FF0070;
+  font-family: IBM Plex Mono;
+  font-size: 157px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 82.5%; /* 129.525px */
+}
+
+.header__text {
+  color: #000028;
+  font-family: IBM Plex Mono;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px; /* 130% */
+  background-color: #FF0070;
+  width: 491px;
+}
+
+.title_section {
+  color: #FF0070;
+  font-family: IBM Plex Mono;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px; /* 130% */
+}
+
+.li_title {
+  color: #000028;
+  font-family: IBM Plex Mono;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px; /* 130% */
+  background-color: #FF0070;
+}
+
+.li_second_title {
+  color: #000028;
+  font-family: IBM Plex Mono;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23.4px; /* 130% */
+  background-color: #FF0070;
+}
+
+.li_text {
+  color: #F1B2CE;
+  font-family: IBM Plex Mono;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23.4px; /* 130% */
 }
