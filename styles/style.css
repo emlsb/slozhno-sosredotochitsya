@@ -3,16 +3,16 @@
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   background-color: #000028;
-  background-image: url(../images/cover-image-dark.png);
-  width: 100%;
-  display: grid;
-  justify-content: center;
   background-attachment: fixed;
+  padding: 20px;
 }
 
 .header {
   width: 100%;
   height: 768px;
+  background-image: url(../images/cover-image-dark.png);
+  background-size: 1024px 768px;
+  background-repeat: no-repeat;
 }
 
 .header__theme-menu-list {
@@ -31,10 +31,15 @@
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 18px; /* 100% */
+  line-height: 18px;
   background-color: transparent;
   border: none;
   text-transform: lowercase;
+  cursor: pointer;
+}
+
+.header__theme-menu-button_type_dark {
+  border: 1px solid;
 }
 
 .title {
@@ -44,7 +49,7 @@
   font-size: 157px;
   font-style: normal;
   font-weight: 700;
-  line-height: 82.5%; /* 129.525px */
+  line-height: 82.5%;
 }
 
 .header__description {
@@ -53,9 +58,16 @@
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
-  line-height: 23.4px; /* 130% */
+  line-height: 23.4px;
   background-color: #FF0070;
   width: 491px;
+}
+
+.section_first {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 315px 649px;
+  gap: 20px;
 }
 
 .title_section {
@@ -64,7 +76,7 @@
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
-  line-height: 23.4px; /* 130% */
+  line-height: 23.4px;
 }
 
 .li_title {
@@ -73,8 +85,29 @@
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
-  line-height: 23.4px; /* 130% */
+  line-height: 23.4px;
   background-color: #FF0070;
+  height: 23px;
+
+}
+
+.section_second {
+  padding-top: 80px;
+  display: grid;
+  grid-template-rows: 47px 431px;
+  justify-content: center;
+  gap: 20px;
+}
+
+.section_second .title_section {
+  width: 315px;
+}
+
+.item_section {
+  display: grid;
+  grid-template-columns: repeat(3, 315px);
+  justify-content: center ;
+  gap: 20px;
 }
 
 .li_second_title {
@@ -83,8 +116,9 @@
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 23.4px; /* 130% */
+  line-height: 23.4px;
   background-color: #FF0070;
+  margin-top: 20px;
 }
 
 .li_text {
@@ -93,5 +127,93 @@
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 23.4px; /* 130% */
+  line-height: 23.4px;
+}
+
+.rules_section {
+  padding-top: 80px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 315px 649px;
+  gap: 20px;
+}
+
+.rules_menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.title_rules_section {
+  color:#FF0070;
+  font-family: IBM Plex Mono;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px;
+  width: 315px;
+  height: 98px;
+}
+
+.img_section {
+  display: grid;
+  justify-content: center;
+  gap: 20px;
+}
+
+.images__group {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, 328px);
+  grid-template-rows: repeat(4, 257px);
+}
+
+.img_sunset {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  width: 649px;
+  height: 260px;
+}
+
+.img_ice-cream {
+  grid-column-start: 3;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  width: 315px;
+  height: 595px;
+  object-fit: cover;
+}
+
+.img_tape {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  width: 315px;
+  height: 768px;
+  object-fit: cover;
+}
+
+.img_books {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  width: 315px;
+  height: 315px;
+}
+
+.img_street {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  width: 649px;
+  height: 428px;
 }
