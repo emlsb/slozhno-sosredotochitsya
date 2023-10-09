@@ -5,6 +5,7 @@
   background-color: #000028;
   background-attachment: fixed;
   padding: 20px;
+  width: 1024px;
 }
 
 .header {
@@ -164,11 +165,11 @@
 .images__group {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(3, 328px);
   grid-template-rows: repeat(4, 257px);
+  gap: 20px;
 }
 
 .img_sunset {
@@ -176,8 +177,8 @@
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 2;
-  width: 649px;
-  height: 260px;
+  width: 676px;
+  height: 257px;
 }
 
 .img_ice-cream {
@@ -185,8 +186,8 @@
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 2;
-  width: 315px;
-  height: 595px;
+  width: 328px;
+  height: 534px;
   object-fit: cover;
 }
 
@@ -195,8 +196,8 @@
   grid-column-end: 1;
   grid-row-start: 2;
   grid-row-end: 4;
-  width: 315px;
-  height: 768px;
+  width: 328px;
+  height: 811px;
   object-fit: cover;
 }
 
@@ -205,8 +206,8 @@
   grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end: 2;
-  width: 315px;
-  height: 315px;
+  width: 328px;
+  height: 257px;
 }
 
 .img_street {
@@ -214,6 +215,6 @@
   grid-column-end: 3;
   grid-row-start: 3;
   grid-row-end: 4;
-  width: 649px;
-  height: 428px;
+  width: 676px;
+  height: 534px;
 }
