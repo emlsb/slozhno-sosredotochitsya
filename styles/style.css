@@ -11,9 +11,7 @@
   /* background: url(../images/cover-image-dark.png), lightgray 50% / cover no-repeat; */
   height: 668px;
   display: grid;
-  justify-items: center;
   align-items: start;
-  justify-items: start;
 }
 
 /* Кнопки меню */
@@ -67,12 +65,47 @@
 
 .header__description {
   background: #FF0070;
-  width: 355px;
   color: #000028;
   font-family: IBM Plex Mono;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
+  line-height: 23.4px; /* 130% */
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 355px;
+  gap: 50px;
+}
+
+.title_section {
+  padding-bottom: 20px;
+  color: #FF0070;
+  font-family: IBM Plex Mono;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px; /* 130% */
+}
+
+.li_title {
+  background: #FF0070;
+  color: #000028;
+  font-family: IBM Plex Mono;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px; /* 130% */
+}
+
+.li_text {
+  padding-top: 10px;
+  color: #F1B2CE;
+  font-family: IBM Plex Mono;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
   line-height: 23.4px; /* 130% */
 }
 
