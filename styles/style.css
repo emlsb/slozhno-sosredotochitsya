@@ -2,13 +2,84 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  background-color: #000028;
-  display: grid;
-  justify-content: center;
-  max-width: 1024px ;
+  width: 375px;
+  padding: 0px 10px;
+  background: #000028;
 }
 
-.header{
+.header {
+  /* background: url(../images/cover-image-dark.png), lightgray 50% / cover no-repeat; */
+  height: 668px;
+  display: grid;
+  justify-items: center;
+  align-items: start;
+  justify-items: start;
+}
+
+/* Кнопки меню */
+.header__theme-menu {
+  width: 70px;
+  height: 98px;
+  padding: 40px 10px 66px 305px;
+}
+
+.header__theme-menu-list {
+  display: grid;
+  gap: 13px;
+}
+
+.header__theme-menu-item {
+  color: #FF0070;
+  text-align: center;
+  font-family: IBM Plex Mono;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 100% */
+}
+
+.header__theme-menu-button {
+  width: 44px;
+  height: 23px;
+  color: #FF0070;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  font-family: IBM Plex Mono;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+/* Заголовок и описание */
+.title {
+  width: 355px;
+  height: 192px;
+  color: #DB00FF;
+  text-shadow: 4px 4px 0px #FF0070;
+  font-family: IBM Plex Mono;
+  font-size: 116px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 82.5%; /* 95.7px */
+}
+
+.header__description {
+  background: #FF0070;
+  width: 355px;
+  color: #000028;
+  font-family: IBM Plex Mono;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px; /* 130% */
+}
+
+
+
+
+/* .header{
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -54,7 +125,9 @@
 }
 
 .title {
-  padding: 200px 200px 114px 0px;
+  width: 100%;
+  margin-right: 20px;
+  padding: 200px 230px 114px 0px;
   color: #DB00FF;
   text-shadow: 4px 4px 0px #FF0070;
   font-family: IBM Plex Mono;
@@ -178,7 +251,7 @@
   margin: 0px 10px;
 } */
 
-.images__group {
+/* .images__group {
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(3, 325px);
@@ -226,11 +299,11 @@
 }
 
 .img_street {
-  margin-top: 62px;
+  margin-block-start: 62px;
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 3;
   grid-row-end: 4;
   width: 670px;
   height: 428px;
-}
+} */
