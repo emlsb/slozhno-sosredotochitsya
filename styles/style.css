@@ -2,61 +2,125 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  width: 375px;
-  padding: 0px 10px;
-  background: #000028;
+  font-family: 'IBM Plex Mono', monospace;
+  box-sizing: border-box;
+  background-color: var(--bg-color);
+  background-attachment: fixed;
+  background-image: url(../images/cover-image-dark.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .header {
-  /* background: url(../images/cover-image-dark.png), lightgray 50% / cover no-repeat; */
   height: 668px;
   display: grid;
   align-items: start;
+}
+
+.decorated-zone::before {
+  position: absolute;
+  content: "";
+  top: 10px;
+  right: 10px;
+  inline-size: 25px;
+  block-size: 25px;
+  border-top: 1px solid var(--decor-color);
+  border-right: 1px solid var(--decor-color);
+}
+
+.decorated-zone::after {
+  position: absolute;
+  content: "";
+  bottom: 41px;
+  left: 10px;
+  inline-size: 25px;
+  block-size: 25px;
+  border-bottom: 1px solid var(--decor-color);
+  border-left: 1px solid var(--decor-color);
+}
+
+.decorated {
+  display: flex;
+  position: absolute;
+  color:var(--decor-color);
+  top: 12px;
+  right: 16px;
+  font-size: var(--main-font-size);
+  align-items: center;
+  gap: 10px;
+}
+
+.decorated::after {
+  display: block;
+  content: "";
+  align-items: center;
+  height: 14px;
+  width: 14px;
+  background-color:var(--decor-color);
+  border-radius: 50%;
+  fill: var(--decor-color);
+  filter: drop-shadow(0px 0px 4px var(--decor-color));
 }
 
 /* Кнопки меню */
 .header__theme-menu {
   width: 70px;
   height: 98px;
-  padding: 40px 10px 66px 305px;
+  padding: 40px 10px 66px 295px;
 }
 
 .header__theme-menu-list {
+  padding-top: 35px;
   display: grid;
-  gap: 13px;
+  gap: 10px;
 }
 
 .header__theme-menu-item {
-  color: #FF0070;
+  color: var(--decor-color);
   text-align: center;
-  font-family: IBM Plex Mono;
-  font-size: 18px;
+  font-size: var(--main-font-size);
   font-style: normal;
   font-weight: 400;
   line-height: 18px; /* 100% */
 }
 
 .header__theme-menu-button {
-  width: 44px;
-  height: 23px;
-  color: #FF0070;
+  display: inline-flex;
+  height: 26px;
+  padding: 0px 13px;
+  justify-content: center;
+  align-items: center;
+  color: var(--decor-color);
   background-color: transparent;
-  border: none;
   text-align: center;
-  font-family: IBM Plex Mono;
-  font-size: 18px;
+  font-size: var(--main-font-size);
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
+  border: none;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--decor-color);
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--decor-color);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+  text-decoration: underline 1px;
+  text-underline-offset: 3px;
 }
 
 /* Заголовок и описание */
 .title {
-  width: 355px;
-  height: 192px;
-  color: #DB00FF;
-  text-shadow: 4px 4px 0px #FF0070;
-  font-family: IBM Plex Mono;
+  padding-top: 75px;
+  padding-left: 10px;
+  color: var(--logo-color);
+  text-shadow: 4px 4px 0px var(--title-decor-color);
   font-size: 116px;
   font-style: normal;
   font-weight: 700;
@@ -64,36 +128,37 @@
 }
 
 .header__description {
-  background: #FF0070;
-  color: #000028;
-  font-family: IBM Plex Mono;
-  font-size: 18px;
+  margin: 0px 10px;
+  margin-bottom: 7.5px;
+  background: var(--title-decor-color);
+  color: var(--title-color);
+  font-size: var(--main-font-size);
   font-style: normal;
   font-weight: 700;
   line-height: 23.4px; /* 130% */
 }
 
 .content {
+  margin-top: 40px;
   display: grid;
   grid-template-columns: 355px;
-  gap: 50px;
+  gap: 30px;
+  padding: 0px 10px;
 }
 
 .title_section {
   padding-bottom: 20px;
-  color: #FF0070;
-  font-family: IBM Plex Mono;
-  font-size: 18px;
+  color: var(--title-decor-color);
+  font-size: var(--main-font-size);
   font-style: normal;
   font-weight: 700;
   line-height: 23.4px; /* 130% */
 }
 
 .li_title {
-  background: #FF0070;
-  color: #000028;
-  font-family: IBM Plex Mono;
-  font-size: 18px;
+  background: var(--decor-color);
+  color: var(--title-color);
+  font-size: var(--main-font-size);
   font-style: normal;
   font-weight: 700;
   line-height: 23.4px; /* 130% */
@@ -101,15 +166,77 @@
 
 .li_text {
   padding-top: 10px;
-  color: #F1B2CE;
-  font-family: IBM Plex Mono;
-  font-size: 18px;
+  padding-bottom: 20px;
+  color: var(--main-text-color);
+  font-size: var(--main-font-size);
   font-style: normal;
   font-weight: 400;
   line-height: 23.4px; /* 130% */
 }
 
+.link {
+  text-shadow: 1px 1px 0px var(--decor-color);
+  text-decoration: none;
+}
 
+.link:hover {
+  border-bottom: 2px solid #F1B2CE;
+}
+
+.link:focus {
+  outline-offset: 0;
+  outline: 1px solid #F1B2CE;
+}
+
+.li_second_title {
+  background-color: var(--decor-color);
+  color: var(--title-color);
+  font-size: var(--main-font-size);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23.4px; /* 130% */
+}
+
+.rules .li_title {
+  margin-bottom: 20px;
+}
+
+
+/* Секция с изображениями */
+.images__group {
+  padding-top: 10px;
+  display: grid;
+  gap: 10px;
+}
+
+.img_sunset{
+  width: 355px;
+}
+
+.img_ice-cream {
+  width: 355px;
+}
+
+.img_tape {
+  width: 355px;
+}
+
+.img_books {
+  width: 355px;
+}
+
+.img_street {
+  width: 355px;
+}
+
+
+.footer {
+  display: flex;
+  width: 375px;
+  height: 667px;
+  justify-content: center;
+  align-items: center;
+}
 
 
 /* .header{
