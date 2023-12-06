@@ -4,6 +4,7 @@
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   font-family: 'IBM Plex Mono', monospace;
   box-sizing: border-box;
+  background-color: var(--bg-color)
 }
 
 .header {
@@ -143,7 +144,7 @@
   grid-template-columns: 355px;
   gap: 30px;
   padding: 40px 10px 0px 10px;
-  background-color: var(--bg-color);
+
 }
 
 .title_section {
@@ -236,7 +237,6 @@
   height: 667px;
   justify-content: center;
   align-items: center;
-  background-color: var(--bg-color)
 }
 
 .footer .title {
