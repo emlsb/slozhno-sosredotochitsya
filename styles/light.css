@@ -17,7 +17,7 @@
   --header-decor-color: #353430;
   --title-color: #353430;
   --main-text-color: #353430;
-  --bg-image: url(../images/cover-image-light.png);
+  background-image: url(../images/cover-image-light.png);
 }
 
 
@@ -32,9 +32,29 @@
     --title-color: #353430;
     --main-text-color: #353430;
     }
+
+    .page {
+      background-image: url(../images/cover-image-light.png);
+    }
+
+    .theme_auto .decorated{
+      display: none;
+    }
 }
 
-
-.theme_light .decorated {
+.page.theme_light .decorated{
   display: none;
+}
+
+@media (min-width: 1024px) {
+  .page.theme_light .title {
+    text-shadow: 4px 4px 0px #FF0070;
+  }
+}
+
+@media (max-width: 768px) and (prefers-color-scheme: light) {
+  .page.theme_light .title,
+  .page.theme_auto .title {
+    text-shadow: 4px 4px 0 #FF8DCB;
+  }
 }

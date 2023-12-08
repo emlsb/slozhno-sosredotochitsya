@@ -1,10 +1,14 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
+/* *{
+  border: 1px solid red;
+} */
+
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   font-family: 'IBM Plex Mono', monospace;
-  box-sizing: border-box;
-  background-image: var(--bg-image);
+  /* background-image: var(--bg-image); */
+  background-image: url(../images/cover-image-dark.png);
   background-color: var(--bg-color);
   background-attachment: fixed;
   background-position: top center;
@@ -162,13 +166,13 @@
   margin-top: 5px;
 }
 
-.rules .li_text {
+/* .rules .li_text {
   padding-top: 11px;
 }
 
 .read {
   padding-top: 11px;
-}
+} */
 
 .list {
   display: grid;
@@ -203,7 +207,7 @@
 }
 
 .link:hover {
-  border-bottom: 2px solid #F1B2CE;
+  border-bottom: 2px solid var(--hover-color);
 }
 
 .link:focus {
@@ -212,7 +216,7 @@
 
 .link:focus-visible {
   outline-offset: 0;
-  outline: 1px solid #F1B2CE;
+  outline: 1px solid var(--hover-color);
 }
 
 .li_second_title {
@@ -232,7 +236,7 @@
 /* Секция с изображениями */
 .img_section {
   display: grid;
-  gap: 20px;
+  gap: 10px;
 }
 
 .images__group {
@@ -257,7 +261,6 @@
 }
 
 .title_footer {
-  padding-left: 40px;
   text-shadow: 2px 2px 0px #FF0070;
 }
 
