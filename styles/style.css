@@ -4,104 +4,101 @@
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   font-family: 'IBM Plex Mono', monospace;
   box-sizing: border-box;
-  background-color: var(--bg-color)
+  background-image: var(--bg-image);
+  background-color: var(--bg-color);
+  background-attachment: fixed;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .header {
-  background-image: var(--bg-image);
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 668px;
-  max-height: 768px;
   display: grid;
-  align-items: start;
+  align-items: center;
+  grid-template-rows: 1fr auto 1fr;
+  block-size: 100vh;
+  min-block-size: 668px;
+  padding: 10px;
 }
 
+/* Декор*/
 .decorated-zone::before {
   position: absolute;
   content: "";
-  top: 10px;
-  right: 10px;
   inline-size: 25px;
   block-size: 25px;
-  border-top: 1px solid var(--header-decor-color);
-  border-right: 1px solid var(--header-decor-color);
+  border-inline-end: 1px solid var(--header-decor-color);
+  border-block-start: 1px solid var(--header-decor-color);
+  inset-inline-end: 10px;
+  inset-block-start: 10px;
 }
 
 .decorated-zone::after {
   position: absolute;
   content: "";
-  bottom: 10px;
-  left: 10px;
   inline-size: 25px;
   block-size: 25px;
-  border-bottom: 1px solid var(--header-decor-color);
-  border-left: 1px solid var(--header-decor-color);
+  border-inline-start: 1px solid var(--header-decor-color);
+  border-block-end: 1px solid var(--header-decor-color);
+  inset-inline-start: 10px;
+  inset-block-end: 10px;
 }
 
 .decorated {
-  display: flex;
   position: absolute;
-  color:var(--header-decor-color);
-  top: 12px;
-  right: 16px;
-  font-size: var(--main-font-size);
-  align-items: center;
-  gap: 10px;
+  inset-inline-end: 0;
+  inset-block-start: 0;
+}
+
+.decorated::before {
+  content: "rec";
+  text-transform: uppercase;
+  position: absolute;
+  color: var(--header-decor-color);
+  font-weight: 400;
+  font-size: 18px;
+  inset-inline-end: 38px;
+  inset-block-start: 10px;
 }
 
 .decorated::after {
-  display: block;
   content: "";
-  align-items: center;
-  height: 14px;
-  width: 14px;
+  position:absolute;
+  inset-inline-end: 19px;
+  inset-block-start: 18px;
+  inline-size: 9px;
+  block-size: 9px;
   background-color:var(--header-decor-color);
   border-radius: 50%;
-  fill: var(--decor-color);
-  filter: drop-shadow(0px 0px 4px var(--header-decor-color));
+  box-shadow: 0 0 4px 2px var(--header-decor-color);
 }
 
 /* Кнопки меню */
 .header__theme-menu {
-  width: 70px;
-  height: 98px;
-  padding: 40px 10px 66px 295px;
+  justify-self: end;
 }
 
 .header__theme-menu-list {
-  padding-top: 35px;
   display: grid;
   gap: 10px;
 }
 
-.header__theme-menu-item {
-  color: var(--header-decor-color);
-  text-align: center;
-  font-size: var(--main-font-size);
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px; /* 100% */
-}
-
 .header__theme-menu-button {
-  display: inline-flex;
-  height: 26px;
-  padding: 0px 13px;
+  display: flex;
   justify-content: center;
-  align-items: center;
   color: var(--header-decor-color);
-  background-color: transparent;
-  text-align: center;
-  font-size: var(--main-font-size);
-  font-style: normal;
   font-weight: 400;
-  line-height: 18px;
+  font-size: var(--main-font-size);
+  text-transform: lowercase;
+  cursor: pointer;
+  line-height: 18px; /* 100% */
+  background-color: transparent;
   border: none;
+  min-inline-size: 70px;
+  min-block-size: 26px;
 }
 
+/* Состояния кнопок */
 .header__theme-menu-button:hover {
   outline: 1px solid var(--hover-color);
 }
@@ -118,20 +115,17 @@
 
 /* Заголовок и описание */
 .title {
-  padding-top: 75px;
-  padding-left: 10px;
   color: var(--logo-color);
   text-shadow: 4px 4px 0px #FF0070;
-  font-size: 116px;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   font-style: normal;
   font-weight: 700;
   line-height: 82.5%; /* 95.7px */
+  /* line-height: 96px; */
 }
 
 .header__description {
-  margin: 0px 10px;
-  margin-bottom: 7.5px;
-  background: var(--text-decor-color);
+  background-color: var(--text-decor-color);
   color: var(--title-section-color);
   font-size: var(--main-font-size);
   font-style: normal;
@@ -139,21 +133,34 @@
   line-height: 23.4px; /* 130% */
 }
 
+/* Основной контент */
 .content {
   display: grid;
-  grid-template-columns: 355px;
-  gap: 30px;
-  padding: 40px 10px 0px 10px;
-
+  gap: 50px;
+  padding: 40px 10px;
 }
 
-.title_section {
-  padding-bottom: 20px;
+.content__section {
+  display: grid;
+  gap: 20px;
+}
+
+.section__header {
   color: var(--title-color);
   font-size: var(--main-font-size);
   font-style: normal;
   font-weight: 700;
   line-height: 23.4px; /* 130% */
+}
+
+.list {
+  display: grid;
+  gap: 20px;
+}
+
+.card {
+  display: grid;
+  gap: 10px;
 }
 
 .li_title {
@@ -166,8 +173,6 @@
 }
 
 .li_text {
-  padding-top: 10px;
-  padding-bottom: 20px;
   color: var(--main-text-color);
   font-size: var(--main-font-size);
   font-style: normal;
@@ -190,46 +195,36 @@
 }
 
 .li_second_title {
-  background-color: var(--decor-color);
-  color: var(--title-color);
+  background-color: var(--text-decor-color);
+  color: var(--title-section-color);
   font-size: var(--main-font-size);
   font-style: normal;
   font-weight: 400;
   line-height: 23.4px; /* 130% */
 }
 
-.rules .li_title {
-  margin-bottom: 20px;
+.rules_card {
+  display: grid;
+  gap: 20px;
 }
 
-
 /* Секция с изображениями */
+.img_section {
+  display: grid;
+  gap: 20px;
+}
+
 .images__group {
-  padding-top: 10px;
   display: grid;
   gap: 10px;
 }
 
-.img_sunset{
-  width: 355px;
+.img_item {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
 }
-
-.img_ice-cream {
-  width: 355px;
-}
-
-.img_tape {
-  width: 355px;
-}
-
-.img_books {
-  width: 355px;
-}
-
-.img_street {
-  width: 355px;
-}
-
 
 .footer {
   display: flex;
@@ -241,4 +236,205 @@
 
 .footer .title {
   text-shadow: 2px 2px 0px #FF0070;
+}
+
+/* Медиа для header */
+@media (min-width: 768px) {
+  .header {
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .decorated-zone::before {
+    inset-inline-end: 20px;
+    inset-block-start: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .decorated-zone::after {
+    inset-inline-start: 20px;
+    inset-block-end: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .decorated::before {
+    inset-inline-end: 48px;
+    inset-block-start: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .decorated::after {
+    inset-inline-end: 29px;
+    inset-block-start: 28px;
+  }
+}
+
+@media (min-width: 768px) {
+  .header__theme-menu {
+    grid-column: 1/3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header__theme-menu-list {
+    grid-auto-flow: column;
+  }
+}
+
+@media (min-width: 768px) {
+  .title {
+    position: relative;
+    grid-column: 1/3;
+    inset-inline-start: -20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
+@media (min-width: 768px) {
+  .header__description {
+    grid-column: 2/3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header__description {
+    margin-block-start: 13px;
+  }
+}
+
+/* Медиа content */
+@media (min-width: 768px) {
+  .content {
+    gap: 80px;
+    padding: 60px 20px;
+  }
+}
+
+/* Медиа для первой секции */
+@media (min-width: 768px) {
+  .section__first {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section__first {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section__first-list {
+    grid-column: 2/4;
+  }
+}
+
+/* Медиа для второй секции */
+@media (min-width: 768px) {
+  .section_second {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section_second {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .section__second-list {
+    grid-column: 1/3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section__second-list {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column: 1/4;
+  }
+}
+
+/* Медиа для третьей секции */
+@media (min-width: 768px) {
+  .rules_section {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .rules_section{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .rules_card {
+    grid-column: 2/4;
+  }
+}
+
+/* Медиа для картинок */
+@media (min-width: 768px) {
+  .img_section {
+    gap: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .images__group {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        "sunset sunset ice-cream"
+        "tape books ice-cream"
+        "tape street street";
+    gap: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .img_item:nth-child(1) {
+    grid-area: sunset;
+  }
+}
+
+@media (min-width: 768px) {
+  .img_item:nth-child(2) {
+    grid-area: ice-cream;
+  }
+}
+
+@media (min-width: 768px) {
+  .img_item:nth-child(3) {
+    grid-area: tape;
+  }
+}
+
+@media (min-width: 768px) {
+  .img_item:nth-child(4) {
+    grid-area: books;
+  }
+}
+
+@media (min-width: 768px) {
+  .img_item:nth-child(5) {
+    grid-area: street;
+  }
 }
