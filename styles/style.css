@@ -1,19 +1,14 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
-/* *{
-  border: 1px solid red;
-} */
-
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   font-family: 'IBM Plex Mono', monospace;
-  /* background-image: var(--bg-image); */
   background-image: url(../images/cover-image-dark.png);
   background-color: var(--bg-color);
   background-attachment: fixed;
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
+  font-size: var(--main-font-size);
 }
 
 .header {
@@ -162,18 +157,6 @@
   line-height: 23.4px; /* 130% */
 }
 
-.rules_section {
-  margin-top: 5px;
-}
-
-/* .rules .li_text {
-  padding-top: 11px;
-}
-
-.read {
-  padding-top: 11px;
-} */
-
 .list {
   display: grid;
   gap: 20px;
@@ -225,7 +208,7 @@
   font-size: var(--main-font-size);
   font-style: normal;
   font-weight: 400;
-  line-height: 23.4px; /* 130% */
+  line-height: 23.4px;
 }
 
 .rules_card {
@@ -421,6 +404,19 @@
 @media (min-width: 1024px) {
   .rules_card {
     grid-column: 2/4;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .title_footer {
+    inset-inline-start: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title_footer {
+    inset-inline-start: 0;
   }
 }
 
