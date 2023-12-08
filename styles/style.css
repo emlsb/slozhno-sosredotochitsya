@@ -19,6 +19,7 @@
   block-size: 100vh;
   min-block-size: 668px;
   padding: 10px;
+  position: relative;
 }
 
 /* Декор*/
@@ -120,8 +121,7 @@
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   font-style: normal;
   font-weight: 700;
-  line-height: 82.5%; /* 95.7px */
-  /* line-height: 96px; */
+  line-height: 96px;
 }
 
 .header__description {
@@ -153,6 +153,18 @@
   line-height: 23.4px; /* 130% */
 }
 
+.rules_section {
+  margin-top: 5px;
+}
+
+.rules .li_text {
+  padding-top: 11px;
+}
+
+.read {
+  padding-top: 11px;
+}
+
 .list {
   display: grid;
   gap: 20px;
@@ -177,7 +189,6 @@
   font-size: var(--main-font-size);
   font-style: normal;
   font-weight: 400;
-  line-height: 23.4px; /* 130% */
 }
 
 .link {
@@ -226,16 +237,25 @@
   object-position: center;
 }
 
+/* Футер */
 .footer {
-  display: flex;
-  width: 375px;
-  height: 667px;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  min-height: 668px;
 }
 
-.footer .title {
+.title_footer {
+  padding-left: 40px;
   text-shadow: 2px 2px 0px #FF0070;
+}
+
+@media (min-width: 768px) {
+  .content {
+    gap: 80px;
+    padding: 60px 20px;
+  }
 }
 
 /* Медиа для header */
