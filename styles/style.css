@@ -190,7 +190,7 @@
 }
 
 .link:hover {
-  border-bottom: 2px solid var(--hover-color);
+  border-bottom: 2px solid var(--main-text-color);
 }
 
 .link:focus {
@@ -198,8 +198,8 @@
 }
 
 .link:focus-visible {
-  outline-offset: 0;
-  outline: 1px solid var(--hover-color);
+  outline-offset: -1px;
+  outline: 1px solid var(--main-text-color);
 }
 
 .li_second_title {
